@@ -90,7 +90,11 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(array){
-    const lowpop = array.filter((obj) => { return obj.population < 5 });
+    const lowpop = array.filter((obj) => { 
+      if( obj.population < 5){
+        return array.animal_name
+      }
+    });
   }
   
 
