@@ -35,7 +35,7 @@ For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you ma
 
 function summation(num) {
 
-  }
+}
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -61,10 +61,11 @@ const zooAnimals = [
   */
 
   function animalNames(array){
-    //  const bothNames = [];
-    // array.forEach(animal_name => {
-    //   return `name: ${animal_name}, scientific: ${scientific_name}`
-    // });
+    const bothNames = array.map(myFunction)
+    function myFunction(obj){
+      return "name: "+obj.animal_name+", scientific: "+obj.scientific_name
+    }
+    return bothNames
   }
   
 
@@ -74,9 +75,12 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(array, name){
-    array.animal_name = name
-    const lowerNames = array.map(name)
+  function lowerCaseNames(array){
+    const lowerNames = array.map(myFunction)
+    function myFunction(obj){
+      return obj.animal_name.toLowerCase()
+    }
+    return lowerNames
   }
  
   
@@ -86,7 +90,7 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(array){
-    
+    const lowpop = array.filter((obj) => { return obj.population < 5 });
   }
   
 
